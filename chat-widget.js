@@ -391,17 +391,17 @@
     const textarea = chatContainer.querySelector('textarea');
     const sendButton = chatContainer.querySelector('button[type="submit"]');
 
-   function generateUUID() {
-       if (crypto.randomUUID) {
-           // Modern browser, use the built-in method
-           return crypto.randomUUID();
-       } else {
-           // Older browser, use a fallback method (see options below)
-           return generateUUIDFallback();
-       }
-   }
+  function generateUUID() {
+    if (crypto.randomUUID) {
+        // Modern browser, use the built-in method
+        return crypto.randomUUID();
+    } else {
+        // Older browser, use a fallback method
+        return generateUUIDFallback();
+    }
+}
 
-    function generateUUIDFallback() {
+function generateUUIDFallback() {
     let dt = new Date().getTime();
     const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         const r = (dt + Math.random() * 16) % 16 | 0;
@@ -410,6 +410,7 @@
     });
     return uuid;
 }
+    
     async function startNewConversation() {
         currentSessionId = generateUUID();
         const data = [{
