@@ -16,7 +16,7 @@
 .chat-window-wrapper {
   position: relative;
   bottom: 20px;
-  right: 20px;
+  right: 0px;
   width: 400px;
   max-width: 90%;
   max-height: 90%;
