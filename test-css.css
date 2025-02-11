@@ -1,0 +1,116 @@
+:root {
+  --chat-bg: #f7f7f8;
+  --chat-header-bg: #ffffff;
+  --chat-header-color: #333333;
+  --chat-input-bg: #ffffff;
+  --chat-input-border: 1px solid #ccc;
+  --chat-bubble-user-bg: #8a9a5a;
+  --chat-bubble-user-color: #ffffff;
+  --chat-bubble-assistant-bg: #e5e5ea;
+  --chat-bubble-assistant-color: #000000;
+  --chat-border-radius: 8px;
+  --chat-spacing: 16px;
+}
+
+/* Wrapper for the chat window */
+.chat-window-wrapper {
+  position: relative;
+  bottom: 20px;
+  right: 20px;
+  width: 400px;
+  max-width: 90%;
+  max-height: 90%;
+  background: var(--chat-bg);
+  border: 1px solid #ccc;
+  border-radius: var(--chat-border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Overall layout: header, messages area, and footer (input) */
+.chat-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header area */
+.chat-header {
+  background: var(--chat-header-bg);
+  padding: var(--chat-spacing);
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+  font-weight: bold;
+  color: var(--chat-header-color);
+}
+
+/* Body: scrollable messages area */
+.chat-body {
+  flex: 1;
+  padding: var(--chat-spacing);
+  overflow-y: auto;
+  background: var(--chat-bg);
+}
+
+/* Footer: fixed input area */
+.chat-footer {
+  background: var(--chat-input-bg);
+  padding: var(--chat-spacing);
+  border-top: 1px solid #eaeaea;
+}
+
+/* Chat input area */
+.chat-inputs {
+  display: flex;
+  align-items: center;
+}
+
+.chat-inputs textarea {
+  flex: 1;
+  resize: none;
+  border: var(--chat-input-border);
+  border-radius: var(--chat-border-radius);
+  padding: 8px;
+  font-size: 14px;
+  height: 40px;
+}
+
+.chat-input-send-button {
+  margin-left: 8px;
+  background: var(--chat-bubble-user-bg);
+  border: none;
+  border-radius: var(--chat-border-radius);
+  color: var(--chat-bubble-user-color);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Chat message bubbles */
+.chat-message {
+  margin-bottom: var(--chat-spacing);
+  max-width: 80%;
+  padding: 10px;
+  border-radius: var(--chat-border-radius);
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chat-message.chat-message-from-user {
+  background: var(--chat-bubble-user-bg);
+  color: var(--chat-bubble-user-color);
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.chat-message.chat-message-from-bot {
+  background: var(--chat-bubble-assistant-bg);
+  color: var(--chat-bubble-assistant-color);
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
